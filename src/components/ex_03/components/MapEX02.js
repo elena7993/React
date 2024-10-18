@@ -21,7 +21,7 @@ const menus = [
     dinner: "돈까스",
   },
 ];
-
+//test
 export const MapEx02 = () => {
   return (
     <div>
