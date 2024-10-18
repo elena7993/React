@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { MapEx02 } from "./MapEX02";
+import MapEx03 from "./MapEx03";
 
 // const arr = [1, 2, 3, 4, 5];
 
@@ -22,7 +23,9 @@ export const MapEx = () => {
         <h2 key={num}>{num}</h2>
       ))} */}
 
-      <MapEx02 />
+      {/* <MapEx02 /> */}
+
+      <MapEx03 />
     </div>
   );
 };
