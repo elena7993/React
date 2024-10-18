@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/ex_01/Header";
+import Footer from "./components/ex_01/Footer";
+import { Menus, Menus_1 } from "./components/ex_01/Menus";
+import Contents from "./components/ex_01/Contents";
+import PropsEx from "./components/ex_02/PropsEx";
+import Ex03 from "./components/ex_03/Ex.03";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <Header></Header>
+      <section>섹션</section>
+      <Footer></Footer> */}
+
+      {/* <Menus />
+      <Menus_1 /> */}
+
+      {/* <Contents /> */}
+
+      {/* 1일***** */}
+
+      {/* <PropsEx />
+      2일차***** */}
+
+      <Ex03 />
+    </>
   );
-}
+};
 
 export default App;

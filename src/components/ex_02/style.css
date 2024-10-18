@@ -1,0 +1,15 @@
+.wrap {
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.box {
+  width: 150px;
+  height: 200px;
+  background-color: lightblue;
+  text-align: center;
+}
