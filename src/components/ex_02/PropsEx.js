@@ -1,4 +1,4 @@
-// import Contents_2 from "./components/Contents_2";
+import Contents_2 from "./components/Contents_2";
 import Contents_3 from "./components/Contents_3";
 import "./style.css";
 
