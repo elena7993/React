@@ -7,6 +7,7 @@
 // import Practice01 from "./components/review_01/components/Practice01";
 import Card02 from "./components/review_01/components/Card02";
 import Props01  from "./components/review_01/Props01"
+import Props03 from "./components/review_02/Props03";
 
 const App = () => {
   return (
@@ -34,7 +35,11 @@ const App = () => {
       <Props01 />
       <Props01 /> */}
 
-    <Props01 />
+    {/* <Props01 /> */}
+
+    <Props03 />
+    <Props03 />
+    <Props03 />
     </>
   );
 };
