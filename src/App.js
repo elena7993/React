@@ -4,12 +4,15 @@
 // import Contents from "./components/ex_01/Contents";
 // import PropsEx from "./components/ex_02/PropsEx";
 import MapEx03 from "./components/ex_03/components/MapEx03";
+import SiteEx from "./components/ex_03/components/SiteEx";
 import Ex03 from "./components/ex_03/Ex.03";
+import Ex04 from "./components/ex_04/Ex04";
 // import Practice01 from "./components/review_01/components/Practice01";
 import Card02 from "./components/review_01/components/Card02";
-import Props01  from "./components/review_01/Props01"
+import Props01 from "./components/review_01/Props01";
 import Props03 from "./components/review_02/Props03";
 import MapEx_03 from "./components/review_03/MapEx_03";
+import Ex05 from "./components/ex_05/Ex05";
 
 const App = () => {
   return (
@@ -32,21 +35,26 @@ const App = () => {
       {/* 3일차***** */}
 
       {/* <Practice01 /> */}
-{/* 
+      {/* 
       <Props01 />
       <Props01 />
       <Props01 /> */}
 
-    {/* <Props01 /> */}
-{/* 
+      {/* <Props01 /> */}
+      {/* 
     <Props03 />
     <Props03 />
     <Props03 /> */}
 
-    <MapEx_03 />
+      {/* <MapEx_03 /> */}
+
+      {/* <SiteEx /> */}
+
+      {/* <Ex04 /> */}
+
+      <Ex05 />
     </>
   );
 };
 
 export default App;
-
