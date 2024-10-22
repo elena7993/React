@@ -9,68 +9,63 @@ const Wrap = styled.div`
 `;
 
 const MusicImg = styled.div`
-width: 300px;
-height: 300px;
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  margin: 15px;
-}
+  width: 300px;
+  height: 300px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 15px;
+  }
 `;
 
 const MusicInfo = styled.div`
-margin-top: 30px;
-margin-left: 15px;
-.title {
-  font-size: 20px;
-  font-weight: 700;
-}
+  margin-top: 30px;
+  margin-left: 15px;
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+  }
 
-.desc {
-  font-size: 18px;
-  color: salmon;
-  margin-top: 5px;
-}
+  .desc {
+    font-size: 18px;
+    color: salmon;
+    margin-top: 5px;
+  }
 `;
 
 const PlayBar = styled.div`
-width: 300px;
-height: 5px;
-background-color: gray;
-margin-left: 15px;
-margin-top: 20px;
-
+  width: 300px;
+  height: 5px;
+  background-color: lightgrey;
+  margin-left: 15px;
+  margin-top: 20px;
 `;
 
 const BtnWrap = styled.div`
-display: flex;
-justify-content: space-around;
-margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 
-i{
-  font-size: 24px;
-  cursor: pointer;
-}
+  i {
+    font-size: 24px;
+    cursor: pointer;
+  }
 `;
 
 const Volume = styled.div`
-width: 150px;
-height: 5px;
-background-color: gray;
-margin-top: 50px;
-margin-left: 15px;
+  width: 150px;
+  height: 5px;
+  background-color: lightgrey;
+  margin-top: 50px;
+  margin-left: 15px;
 `;
-
-
-
 
 const Ex05 = () => {
   return (
     <>
       <Wrap>
-
         <MusicImg>
           <img
             src="https://i1.sndcdn.com/artworks-Eke4dWZTIrXCkXPW-hX2ihg-t500x500.jpg"
@@ -88,13 +83,12 @@ const Ex05 = () => {
         </PlayBar>
 
         <BtnWrap>
-        <i class="fa-solid fa-backward"></i>
-        <i class="fa-solid fa-pause"></i>
-        <i class="fa-solid fa-forward"></i>
+          <i class="fa-solid fa-backward"></i>
+          <i class="fa-solid fa-pause"></i>
+          <i class="fa-solid fa-forward"></i>
         </BtnWrap>
 
         <Volume></Volume>
-      
       </Wrap>
     </>
   );
