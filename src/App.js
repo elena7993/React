@@ -14,6 +14,7 @@ import Props03 from "./components/review_02/Props03";
 import MapEx_03 from "./components/review_03/MapEx_03";
 import Ex05 from "./components/ex_05/Ex05";
 import { MusicApp } from "./components/ex_05/MusicApp";
+import Ex06 from "./components/ex_06/Ex06";
 
 const App = () => {
   return (
@@ -55,7 +56,9 @@ const App = () => {
 
       {/* <Ex05 /> */}
 
-      <MusicApp />
+      {/* <MusicApp /> */}
+
+      <Ex06 />
     </>
   );
 };
