@@ -60,11 +60,11 @@ const App = () => {
 
       {/* <MusicApp /> */}
 
-      {/* <Ex06 /> */}
+      <Ex06 />
 
       {/* <R04_ex06 /> */}
 
-      <MusicApp01 />
+      {/* <MusicApp01 /> */}
     </>
   );
 };
