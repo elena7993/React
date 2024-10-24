@@ -8,11 +8,11 @@ const Header = () => {
       </li>
 
       <li>
-        <Link to="/sub02">1번 서브페이지</Link>
+        <Link to="/sub01">1번 서브페이지</Link>
       </li>
 
       <li>
-        <Link to="/sub02">1번 서브페이지</Link>
+        <Link to="/sub02">2번 서브페이지</Link>
       </li>
     </ul>
   );
