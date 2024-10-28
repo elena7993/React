@@ -1,24 +1,62 @@
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCoffee,
+  faFingerprint,
+  faTreePalm,
+} from "@fortawesome/free-solid-svg-icons";
+import { faOdysee } from "@fortawesome/free-brands-svg-icons";
 
 const Wrap = styled.div`
   width: 100%;
-  max-width: 450px;
+  max-width: 350px;
   height: 600px;
-  background-color: lightgrey;
+  background: rgb(51, 216, 218);
+  background: linear-gradient(
+    308deg,
+    rgba(51, 216, 218, 1) 0%,
+    rgba(253, 247, 45, 1) 100%
+  );
+  border: 2px solid #000;
   margin: 0 auto;
   border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  input {
-    all: unset;
-    width: 300px;
-    height: 40px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    border-radius: 30px;
-    /* display: flex; */
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px 20px;
+    h2 {
+      width: 80px;
+      height: 30px;
+      /* border: 1px solid black; */
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin: 10px 0;
+    }
+    input {
+      all: unset;
+      width: 300px;
+      height: 40px;
+      background-color: #fff;
+      border: 1px solid rgba(51, 216, 218, 1);
+      border-radius: 30px;
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    button {
+      all: unset;
+      width: 200px;
+      height: 36px;
+      background-color: rgba(253, 247, 45, 0.9);
+      border-radius: 30px;
+      text-align: center;
+      line-height: 30px;
+      margin: 20px 0 90px 0;
+    }
   }
 `;
 
@@ -40,6 +78,10 @@ const Ex08 = () => {
   return (
     <Wrap>
       <form onSubmit={handleSubmit(loginSubmit)}>
+        <div>
+          {/* <FontAwesomeIcon icon="fa-light fa-tree-palm" /> */}
+          <FontAwesomeIcon icon={faOdysee} style={{ fontSize: "72px" }} />
+        </div>
         <h2>로그인</h2>
 
         <input
@@ -67,6 +109,9 @@ const Ex08 = () => {
     =>자바스크립트 문법이다 */}
 
         <button>로그인</button>
+        <div>
+          <FontAwesomeIcon icon={faFingerprint} style={{ fontSize: "52px" }} />
+        </div>
       </form>
     </Wrap>
   );
