@@ -1,4 +1,26 @@
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
+
+const Wrap = styled.div`
+  width: 100%;
+  max-width: 450px;
+  height: 600px;
+  background-color: lightgrey;
+  margin: 0 auto;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    all: unset;
+    width: 300px;
+    height: 40px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    /* display: flex; */
+  }
+`;
 
 const Ex08 = () => {
   const {
@@ -16,11 +38,12 @@ const Ex08 = () => {
   // 훅은 무조건 안에 적어야 한다
 
   return (
-    <div>
+    <Wrap>
       <form onSubmit={handleSubmit(loginSubmit)}>
         <h2>로그인</h2>
 
         <input
+          className="inputBox"
           {...register("username", {
             required: "아이디는 필수입니다!",
           })}
@@ -45,7 +68,7 @@ const Ex08 = () => {
 
         <button>로그인</button>
       </form>
-    </div>
+    </Wrap>
   );
 };
 
