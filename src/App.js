@@ -20,6 +20,7 @@ import MusicApp01 from "./components/review_05/MusicApp01";
 import Ex07 from "./components/ex_07/Ex07";
 import Ex08 from "./components/ex_08/Ex08";
 import Ex08_review from "./components/ex_08/Ex08_review";
+import Re06 from "./components/review_06/Re06";
 
 const App = () => {
   return (
@@ -71,7 +72,9 @@ const App = () => {
 
       {/* <Ex07 /> */}
 
-      <Ex08 />
+      {/* <Ex08 /> */}
+
+      <Re06 />
 
       {/* <Ex08_review /> */}
     </>
