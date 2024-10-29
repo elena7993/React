@@ -1,143 +1,42 @@
-import { useForm } from "react-hook-form";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faFingerprint,
-  faTreePalm,
-} from "@fortawesome/free-solid-svg-icons";
-import { faOdysee } from "@fortawesome/free-brands-svg-icons";
-
-const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Form = styled.form`
-  max-width: 450px;
-  width: 100%;
-  padding: 80px 20px;
-  border: 1px solid #dbdbdb;
-  border-radius: 20px;
-  h2 {
-    font-size: 50px;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: -2px;
-    margin-bottom: 50px;
-  }
-
-  input {
-    all: unset;
-    width: 100%;
-    height: 50px;
-    border: 1px solid #dbdbdb;
-    border-radius: 10px;
-    margin-top: 10px;
-    padding: 5px;
-    box-sizing: border-box;
-    &::placeholder {
-      margin-left: 5px;
-    }
-  }
-
-  p {
-    font-size: 14px;
-    color: crimson;
-    margin-top: 3px;
-  }
-`;
-
-const Button = styled.button`
-  all: unset;
-  width: 100%;
-  height: 50px;
-  background-color: cornflowerblue;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 20px;
-  font-size: 18px;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  opacity: ${(props) => props.$isActive};
-`;
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const Ex08 = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm();
-
-  const loginSubmit = (data) => {
-    // console.log(data);
-  };
-
-  //   console.log(errors?.username?.message);
-  console.log(isValid);
-
-  // 훅은 무조건 안에 적어야 한다
-
   return (
-    <Container>
-      <Form onSubmit={handleSubmit(loginSubmit)}>
-        <div>
-          {/* <FontAwesomeIcon icon="fa-light fa-tree-palm" /> */}
-          {/* <FontAwesomeIcon icon={faOdysee} style={{ fontSize: "72px" }} /> */}
-        </div>
-        <h2>로그인</h2>
-
-        <input
-          className="inputBox"
-          {...register("username", {
-            required: "아이디는 필수입니다!",
-            minLength: {
-              value: 2,
-              message: "아이디는 두 자리 이상 작성하세요",
-            },
-          })}
-          type="text"
-          placeholder="아이디"
-        />
-        <p>{errors?.username?.message}</p>
-        <input
-          {...register("password", {
-            required: "패스워드는 필수입니다!",
-            // minLength: {
-            //   value: 8,
-            //   message: "패스워드는 8자 이상 작성하세요",
-            // },
-            pattern: {
-              value: /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/,
-              message: "영문 숫자 특수기호 조합 8자리 이상 작성하세요",
-            },
-          })}
-          type="password"
-          placeholder="패스워드"
-        />
-        <p>{errors?.password?.message}</p>
-
-        {/* *옵셔널 체이닝(?.)
-    =>객체 속성의 유무에 따라 undefinded로 반환이 아닌
-    값이 있으면 값을 반환하고 없으면 빈값으로 반환함
-    =>객체에게만 사용가능함 
-    =>자바스크립트 문법이다 */}
-
-        <Button $isActive={isValid ? "1" : "0.5"}>로그인</Button>
-        <div>
-          {/* <FontAwesomeIcon icon={faFingerprint} style={{ fontSize: "52px" }} /> */}
-        </div>
-      </Form>
-    </Container>
+    <>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </HashRouter>
+    </>
   );
 };
 
 export default Ex08;
 
-// *register
-// => 정보를 제어하고 반환함.
+// *쿠키
 
-// *정규 표현식(Regex) 공부해보기
+// *세션
+// =>올드방식, 가장 많이 쓰임
+// =>(프론트엔트-백엔트-데이터베이스) 구조에서 DB에 로그인기록(유효기간)남김
+// =>그 유효기간이 저장되어있다/ 시간이 만료되면 -> 세션이 만료되었습니다
+// =>단점은, 유저가 많으면 관리가 어렵다 따라서 서버를 여러개로 나눠서 관리한다(ex:유튜브)
+// =>대신 안전함!!
+
+// *토큰
+// =>(프론트엔드-백엔드-데이터베이스) 구조에서 백엔드가 DB에 들려 토큰값 저장/
+// 토큰을 줌(누구나 토큰을 볼 수 있다. 단 정보는 백엔드만 볼 수 있다)- 일종의 고유번호.
+// =>사용자가 페이지를 이동할때마다 DB의 토큰값과 사용자의 토큰값을 같은지 대조함
+// =>저장은 유저가 한다
+// =>따라서 빠름빠름
+// =>단, 보안은 세션보다 약하다.
+
+// *캐시
+// =>예를 들어 사이트에 접속하면 요청해서 받아옴
+// =>이미지같은 것들을 저장시켜놓는다.
+// =>다음에 열게 되었을 때 또 요청하는 것이 아니라 저장된 것을 바로 보여줄 수 있다
